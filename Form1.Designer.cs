@@ -1,7 +1,7 @@
 ﻿
 namespace SerialCommunication
 {
-    partial class Form1
+    partial class WagaTest
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,6 @@ namespace SerialCommunication
             this.ConnectionButton = new System.Windows.Forms.Button();
             this.lConnection = new System.Windows.Forms.Label();
             this.lWaga = new System.Windows.Forms.Label();
-            this.stopButton = new System.Windows.Forms.Button();
             this.wagaPort = new System.IO.Ports.SerialPort(this.components);
             this.SuspendLayout();
             // 
@@ -86,34 +85,23 @@ namespace SerialCommunication
             this.lWaga.TabIndex = 4;
             this.lWaga.Text = "Waga";
             // 
-            // stopButton
-            // 
-            this.stopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.stopButton.Location = new System.Drawing.Point(44, 115);
-            this.stopButton.Name = "stopButton";
-            this.stopButton.Size = new System.Drawing.Size(288, 41);
-            this.stopButton.TabIndex = 5;
-            this.stopButton.Text = "STOP";
-            this.stopButton.UseVisualStyleBackColor = true;
-            // 
             // wagaPort
             // 
             this.wagaPort.BaudRate = 4800;
             this.wagaPort.PortName = "COM4";
             // 
-            // Form1
+            // WagaTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 168);
-            this.Controls.Add(this.stopButton);
+            this.ClientSize = new System.Drawing.Size(350, 118);
             this.Controls.Add(this.lWaga);
             this.Controls.Add(this.lConnection);
             this.Controls.Add(this.ConnectionButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.portList);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "WagaTest";
+            this.Text = "WagaTest";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,7 +114,6 @@ namespace SerialCommunication
         private System.Windows.Forms.Button ConnectionButton;
         private System.Windows.Forms.Label lConnection;
         private System.Windows.Forms.Label lWaga;
-        private System.Windows.Forms.Button stopButton;
         private System.IO.Ports.SerialPort wagaPort;
     }
 }

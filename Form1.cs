@@ -12,7 +12,7 @@ using System.Diagnostics;
 
 namespace SerialCommunication
 {
-    public partial class Form1 : Form
+    public partial class WagaTest : Form
     {
 
        // bool isConnected = false;
@@ -36,7 +36,7 @@ namespace SerialCommunication
             }
         }
 
-        public Form1()
+        public WagaTest()
         {
             InitializeComponent();
             getAvailablePorts();
