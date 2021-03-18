@@ -33,6 +33,7 @@ namespace SerialCommunication
                 var handle = proc.MainWindowHandle;
                 SetForegroundWindow(handle);
                 SendKeys.Send("^v");
+                SendKeys.Send("{ENTER}");
             }
         }
 
@@ -103,16 +104,23 @@ namespace SerialCommunication
         void _port_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             arduinoData = _port.ReadLine();
+            arduinoData = arduinoData.Replace("kg", " ");
+            arduinoData = arduinoData.Replace("g", " ");
+            arduinoData = arduinoData.Replace(" ", "");
+            arduinoData = arduinoData.Replace(".", ",");
+
             this.Invoke(new EventHandler(displaydata_event));
 
         }
 
         private void displaydata_event(object sender, EventArgs e)
         {
+
             lWaga.Text = arduinoData;
             System.Windows.Forms.Clipboard.SetText(arduinoData);
             System.Windows.Forms.Clipboard.GetText();
             PasteToApplication("Excel");
         }
+
     }
 }
